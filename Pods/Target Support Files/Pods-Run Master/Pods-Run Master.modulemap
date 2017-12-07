@@ -1,0 +1,6 @@
+framework module Pods_Run_Master {
+  umbrella header "Pods-Run Master-umbrella.h"
+
+  export *
+  module * { export * }
+}
