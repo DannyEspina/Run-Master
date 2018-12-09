@@ -44,10 +44,10 @@ class MapViewStore: NSObject, NSCoding {
     }
     required init(coder aDecoder: NSCoder) {
         
-        self.coordNELat = aDecoder.decodeObject(forKey: "coordNELat") as! Double
-        self.coordNELon = aDecoder.decodeObject(forKey: "coordNELon") as! Double
-        self.coordSWLat = aDecoder.decodeObject(forKey: "coordSWLat") as! Double
-        self.coordSWLon = aDecoder.decodeObject(forKey: "coordSWLon") as! Double
+        self.coordNELat = aDecoder.decodeObject(forKey: "coordNELat") as? Double
+        self.coordNELon = aDecoder.decodeObject(forKey: "coordNELon") as? Double
+        self.coordSWLat = aDecoder.decodeObject(forKey: "coordSWLat") as? Double
+        self.coordSWLon = aDecoder.decodeObject(forKey: "coordSWLon") as? Double
         
         self.coordNE = CLLocationCoordinate2D(latitude: coordNELat, longitude: coordNELon)
         self.coordSW = CLLocationCoordinate2D(latitude: coordSWLat, longitude: coordSWLon)

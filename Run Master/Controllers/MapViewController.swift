@@ -87,7 +87,7 @@ class MapViewController: UIViewController{
         let tabBar = self.tabBarController?.tabBar
         saveTabBarHeight = tabFrame?.size.height
         saveTabBarY = tabFrame?.origin.y
-        print("this \(saveTabBarHeight) \(saveTabBarY)")
+        print("this \(String(describing: saveTabBarHeight)) \(String(describing: saveTabBarY))")
         tabFrame?.size.height = 0
         
         // The items in the tab bar will move when the height changes. so we move them back
@@ -164,9 +164,9 @@ class MapViewController: UIViewController{
         guard pointsArray.count > 1 else {
             let title = "Something Went Wrong"
             let message = "You didn't ran far enough to give any meaningful results OR user location is not authorized"
-            let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+            let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
             
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
             
             self.present(alert, animated: true, completion: nil)
             resetView(true)
@@ -242,7 +242,7 @@ class MapViewController: UIViewController{
         self.resumeButton.alpha = 0
         self.resumeButton.isEnabled = false
         // Sets the map to view the user's current location with a certain style.
-        self.mapView = MGLMapView(frame: mapContainer.bounds, styleURL: MGLStyle.darkStyleURL())
+        self.mapView = MGLMapView(frame: mapContainer.bounds, styleURL: MGLStyle.darkStyleURL)
         self.mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         mapView.setUserTrackingMode(.follow, animated: true)
         trackingMode = .follow
@@ -493,10 +493,14 @@ extension MapViewController: CLLocationManagerDelegate, MGLMapViewDelegate {
         
         // Add a layer to style our polyline.
         let layer = MGLLineStyleLayer(identifier: "polyline", source: source)
-        layer.lineJoin = MGLStyleValue(rawValue: NSValue(mglLineJoin: .round))
-        layer.lineCap = MGLStyleValue(rawValue: NSValue(mglLineCap: .round))
-        layer.lineColor = MGLStyleValue(rawValue: UIColor.red)
-        layer.lineWidth = MGLStyleFunction(interpolationMode: .exponential, cameraStops: [14: MGLConstantStyleValue<NSNumber>(rawValue: 2.5), 18: MGLConstantStyleValue<NSNumber>(rawValue: 6)], options: [.defaultValue : MGLConstantStyleValue<NSNumber>(rawValue: 1)])
+        layer.lineJoin = NSExpression(forConstantValue: "round")
+        layer.lineCap = NSExpression(forConstantValue: "round")
+        layer.lineColor = NSExpression(forConstantValue: UIColor.red)
+        
+        // The line width should gradually increase based on the zoom level.
+        layer.lineWidth = NSExpression(format: "mgl_interpolate:withCurveType:parameters:stops:($zoomLevel, 'linear', nil, %@)",
+                                       [14: 5, 18: 20])
+
         style.addLayer(layer)
         
     }

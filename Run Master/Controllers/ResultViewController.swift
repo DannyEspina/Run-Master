@@ -105,7 +105,7 @@ class ResultViewController: UIViewController, UITextViewDelegate, UIImagePickerC
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let options = SnapshotOptions( styleURL: MGLStyle.darkStyleURL(), size: CGSize(width: 375, height: 192))
+        let options = SnapshotOptions( styleURL: MGLStyle.darkStyleURL, size: CGSize(width: 375, height: 192))
         let polylines = Path(coordinates: workout.pointsArray)
         polylines.fillColor = UIColor.clear
         polylines.strokeColor = UIColor.red
@@ -119,38 +119,38 @@ class ResultViewController: UIViewController, UITextViewDelegate, UIImagePickerC
 
         snapshot.image { (image, error) in
             self.mapView.image = image
-            self.workout.snapshotData = UIImagePNGRepresentation(image!)
+            self.workout.snapshotData = image!.pngData()
         }
         
         let pointsArray = workout.pointsArray
         
         // creates rectangles from two points and unites them together. loop through each point collected.
-        var flyTo = MKMapRectNull
+        var flyTo = MKMapRect.null
         // set this in mapViewController for better preformance
         for coordinate in pointsArray! {
             // convert CLCoordinate to MKMapPoint
-            let point = MKMapPointForCoordinate (coordinate)
+            let point = MKMapPoint.init (coordinate)
             
-            let pointRect = MKMapRectMake(point.x, point.y, 0, 0)
-            if MKMapRectIsNull(flyTo) {
+            let pointRect = MKMapRect.init(x: point.x, y: point.y, width: 0, height: 0)
+            if flyTo.isNull {
                 flyTo = pointRect
             } else {
-                flyTo = MKMapRectUnion(flyTo, pointRect)
+                flyTo = flyTo.union(pointRect)
             }
         }
         
         // Creates bounds.
-        coordNE = getCoordinateFromMapRectanglePoint(x: flyTo.origin.x, y: MKMapRectGetMaxY(flyTo))
-        coordSW = getCoordinateFromMapRectanglePoint(x: MKMapRectGetMaxX(flyTo), y: flyTo.origin.y)
+        coordNE = getCoordinateFromMapRectanglePoint(x: flyTo.origin.x, y: flyTo.maxY)
+        coordSW = getCoordinateFromMapRectanglePoint(x: flyTo.maxX, y: flyTo.origin.y)
         
         self.deleteButton.isEnabled = false
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
         
         toolbar.barTintColor = UIColor.white
-        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
         
-          let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.done, target: self, action: #selector(dismissKeyboard))
+          let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(dismissKeyboard))
         
         toolbar.setItems([flexibleSpace, doneButton], animated: false)
         self.descriptionTextView.inputAccessoryView = toolbar
@@ -180,8 +180,8 @@ class ResultViewController: UIViewController, UITextViewDelegate, UIImagePickerC
     }
     // Creates a CllocationCoordinates2D from mapRect
     func getCoordinateFromMapRectanglePoint(x: Double, y: Double) -> CLLocationCoordinate2D {
-        let swMapPoint = MKMapPointMake(x, y)
-        return MKCoordinateForMapPoint(swMapPoint)
+        let swMapPoint = MKMapPoint.init(x: x, y: y)
+        return swMapPoint.coordinate
     }
     @objc func imageTapped()
     {
@@ -209,13 +209,16 @@ class ResultViewController: UIViewController, UITextViewDelegate, UIImagePickerC
         
         
     }
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+// Local variable inserted by Swift 4.2 migrator.
+let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
+
         // Get picked image from info dictionary
-        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        let image = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.originalImage)] as! UIImage
         
         // Put that image on the screen in the image view
         imageView.image = image
-        workout.imageData = UIImagePNGRepresentation(image)
+        workout.imageData = image.pngData()
         imageView.backgroundColor = UIColor(rgb: 0x1B1E25)
         
         if image.size.width > image.size.height {
@@ -255,4 +258,14 @@ class ResultViewController: UIViewController, UITextViewDelegate, UIImagePickerC
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
+	return input.rawValue
 }

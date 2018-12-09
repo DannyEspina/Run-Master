@@ -53,6 +53,10 @@ let userAgent: String = {
         chip = "arm64"
     #elseif arch(i386)
         chip = "i386"
+    #elseif os(watchOS) // Workaround for incorrect arch in machine.h for simulator ⌚️ gen 4
+        chip = "i386"
+    #else
+        chip = "unknown"
     #endif
     components.append("(\(chip))")
     
@@ -68,7 +72,7 @@ public protocol SnapshotOptionsProtocol: NSObjectProtocol {
 /**
  A `Snapshot` instance represents a static snapshot of a map with optional overlays. With a snapshot instance, you can synchronously or asynchronously generate an image based on the options you provide via an HTTP request, or you can get the URL used to make this request. The image is obtained on demand from the [Mapbox Static API](https://www.mapbox.com/api-documentation/#static) or the [classic Mapbox Static API](https://www.mapbox.com/api-documentation/?language=Swift#static-classic), depending on whether you use a `SnapshotOptions` object or a `ClassicSnapshotOptions` object.
  
- The snapshot image can be used in an image view (`UIImage` on iOS and tvOS, `NSImage` on macOS, `WKImage` on watchOS). The image does not respond to user gestures. To add interactivity, use the [Mapbox iOS SDK](https://www.mapbox.com/ios-sdk/) or [Mapbox macOS SDK](https://github.com/mapbox/mapbox-gl-native/tree/master/platform/macos/), which can optionally display raster tiles.
+ The snapshot image can be used in an image view (`UIImage` on iOS and tvOS, `NSImage` on macOS, `WKImage` on watchOS). The image does not respond to user gestures. To add interactivity, use the [Mapbox Maps SDK for iOS](https://www.mapbox.com/ios-sdk/) or the [Mapbox Maps SDK for macOS](https://github.com/mapbox/mapbox-gl-native/tree/master/platform/macos/), which can optionally display raster tiles. If you are already using the map SDKs for iOS or macOS, use the `MGLMapSnapshotter` object instead of this class to take advantage of caching and offline packs.
  */
 @objc(MBSnapshot)
 open class Snapshot: NSObject {
@@ -87,7 +91,7 @@ open class Snapshot: NSObject {
     public typealias CompletionHandler = (_ image: Image?, _ error: NSError?) -> Void
     
     /// Options that determine the contents and format of the output image.
-    open let options: SnapshotOptionsProtocol
+    @objc public let options: SnapshotOptionsProtocol
     
     /// The API endpoint to request the image from.
     internal var apiEndpoint: URL
@@ -102,7 +106,7 @@ open class Snapshot: NSObject {
      - parameter accessToken: A Mapbox [access token](https://www.mapbox.com/help/define-access-token/). If an access token is not specified when initializing the snapshot object, it should be specified in the `MGLMapboxAccessToken` key in the main application bundle’s Info.plist.
      - parameter host: An optional hostname to the server API. The official Mapbox API endpoint is used by default.
      */
-    public init(options: SnapshotOptionsProtocol, accessToken: String?, host: String?) {
+    @objc public init(options: SnapshotOptionsProtocol, accessToken: String?, host: String?) {
         let accessToken = accessToken ?? defaultAccessToken
         assert(accessToken != nil && !accessToken!.isEmpty, "A Mapbox access token is required. Go to <https://www.mapbox.com/studio/account/tokens/>. In Info.plist, set the MGLMapboxAccessToken key to your access token, or use the Snapshot(options:accessToken:host:) initializer.")
         
@@ -123,7 +127,7 @@ open class Snapshot: NSObject {
      - parameter options: Options that determine the contents and format of the output image.
      - parameter accessToken: A Mapbox [access token](https://www.mapbox.com/help/define-access-token/). If an access token is not specified when initializing the snapshot object, it should be specified in the `MGLMapboxAccessToken` key in the main application bundle’s Info.plist.
      */
-    public convenience init(options: SnapshotOptionsProtocol, accessToken: String?) {
+    @objc public convenience init(options: SnapshotOptionsProtocol, accessToken: String?) {
         self.init(options: options, accessToken: accessToken, host: nil)
     }
     
@@ -134,14 +138,14 @@ open class Snapshot: NSObject {
      
      - parameter options: Options that determine the contents and format of the output image.
      */
-    public convenience init(options: SnapshotOptionsProtocol) {
+    @objc public convenience init(options: SnapshotOptionsProtocol) {
         self.init(options: options, accessToken: nil)
     }
     
     /**
      The HTTP URL used to fetch the snapshot image from the API.
      */
-    open var url: URL {
+    @objc open var url: URL {
         var components = URLComponents()
         components.queryItems = params
         return URL(string: "\(options.path)?\(components.percentEncodedQuery!)", relativeTo: apiEndpoint)!
@@ -163,7 +167,7 @@ open class Snapshot: NSObject {
      
      - attention: This property’s getter retrieves the image synchronously over a network connection, blocking the thread on which it is called. If a connection error or server error occurs, the getter returns `nil`. Consider using the asynchronous `image(completionHandler:)` method instead to avoid blocking the calling thread and to get more details about any error that may occur.
      */
-    open var image: Image? {
+    @objc open var image: Image? {
         if let data = try? Data(contentsOf: url) {
             return Image(data: data)
         } else {
@@ -181,7 +185,7 @@ open class Snapshot: NSObject {
      - parameter completionHandler: The closure (block) to call with the resulting image. This closure is executed on the application’s main thread.
      - returns: The data task used to perform the HTTP request. If, while waiting for the completion handler to execute, you no longer want the resulting image, cancel this task.
      */
-    open func image(completionHandler handler: @escaping CompletionHandler) -> URLSessionDataTask {
+    @objc open func image(completionHandler handler: @escaping CompletionHandler) -> URLSessionDataTask {
         var request = URLRequest(url: url)
         request.setValue(userAgent, forHTTPHeaderField: "User-Agent")
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
@@ -234,7 +238,7 @@ open class Snapshot: NSObject {
                     failureReason = "More than \(formattedCount) requests have been made with this access token within a period of \(formattedInterval)."
                 }
                 if let rolloverTime = response.rateLimitResetTime {
-                    let formattedDate = DateFormatter.localizedString(from: rolloverTime, dateStyle: .long, timeStyle: .full)
+                    let formattedDate = DateFormatter.localizedString(from: rolloverTime, dateStyle: .long, timeStyle: .long)
                     recoverySuggestion = "Wait until \(formattedDate) before retrying."
                 }
             default:

@@ -26,6 +26,8 @@
 	<true/>
 	<key>MGLMapboxAccessToken</key>
 	<string>pk.eyJ1IjoiZGFubnllc3BpbmEiLCJhIjoiY2o5N2I3c2QxMDVlMDMybjNtOHF6Mm1vNSJ9.w9gnowvCgENBhyipUKJwew</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Allow Run Master to use your camera</string>
 	<key>NSHealthShareUsageDescription</key>
 	<string>We will use your health information to better track Run Master workouts.</string>
 	<key>NSHealthUpdateUsageDescription</key>
@@ -38,8 +40,6 @@
 	<string>Shows your location on the map and helps improve Run Master</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Allow Run Master to access your photo library</string>
-	<key>NSCameraUsageDescription</key>
-	<string>Allow Run Master to use your camera</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>location</string>

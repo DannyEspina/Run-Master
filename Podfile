@@ -5,19 +5,9 @@ target 'Run Master' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
-
+  pod 'Mapbox-iOS-SDK'
   pod 'MapboxStatic.swift', '~> 0.9'
 
   # Pods for Run Master
-
-  target 'Run MasterTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'Run MasterUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
 
 end

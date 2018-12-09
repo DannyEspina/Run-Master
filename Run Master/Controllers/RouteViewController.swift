@@ -18,7 +18,7 @@ class RouteViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        mapView = MGLMapView(frame: routeMapContainer.bounds, styleURL: MGLStyle.darkStyleURL())
+        mapView = MGLMapView(frame: routeMapContainer.bounds, styleURL: MGLStyle.darkStyleURL)
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
         // Centered at user location

@@ -62,7 +62,7 @@ class DetailWorkoutViewController: UIViewController, MGLMapViewDelegate, UIScrol
         
         closeMapButton.alpha = 0
         
-        self.mapView = MGLMapView(frame: mapContainer.bounds, styleURL: MGLStyle.darkStyleURL())
+        self.mapView = MGLMapView(frame: mapContainer.bounds, styleURL: MGLStyle.darkStyleURL)
         self.saveMapViewFrame = mapView.frame
         self.saveMapViewY = mapView.layer.position.y
 
@@ -72,7 +72,7 @@ class DetailWorkoutViewController: UIViewController, MGLMapViewDelegate, UIScrol
         let coordSW = mapViewStore.coordSW
         let coordinateBound = MGLCoordinateBoundsMake(coordSW!, coordNE!)
         
-        let edgeInsets = UIEdgeInsetsMake(20, 20, 20, 20)
+        let edgeInsets = UIEdgeInsets.init(top: 20, left: 20, bottom: 20, right: 20)
         
         mapView.setVisibleCoordinateBounds(coordinateBound, edgePadding: edgeInsets, animated: true)
 
@@ -96,10 +96,14 @@ class DetailWorkoutViewController: UIViewController, MGLMapViewDelegate, UIScrol
         
         // Add a layer to style our polyline.
         let layer = MGLLineStyleLayer(identifier: "polyline", source: source)
-        layer.lineJoin = MGLStyleValue(rawValue: NSValue(mglLineJoin: .round))
-        layer.lineCap = MGLStyleValue(rawValue: NSValue(mglLineCap: .round))
-        layer.lineColor = MGLStyleValue(rawValue: UIColor.red)
-        layer.lineWidth = MGLStyleFunction(interpolationMode: .exponential, cameraStops: [14: MGLConstantStyleValue<NSNumber>(rawValue: 2.5), 18: MGLConstantStyleValue<NSNumber>(rawValue: 6)], options: [.defaultValue : MGLConstantStyleValue<NSNumber>(rawValue: 1)])
+        layer.lineJoin = NSExpression(forConstantValue: "round")
+        layer.lineCap = NSExpression(forConstantValue: "round")
+        layer.lineColor = NSExpression(forConstantValue: UIColor.red)
+        
+        // The line width should gradually increase based on the zoom level.
+        layer.lineWidth = NSExpression(format: "mgl_interpolate:withCurveType:parameters:stops:($zoomLevel, 'linear', nil, %@)",
+                                       [14: 5, 18: 20])
+
 
         style.addLayer(layer)
         
@@ -134,8 +138,8 @@ class DetailWorkoutViewController: UIViewController, MGLMapViewDelegate, UIScrol
         
     }
    func getCoordinateFromMapRectanglePoint(x: Double, y: Double) -> CLLocationCoordinate2D {
-        let swMapPoint = MKMapPointMake(x, y)
-        return MKCoordinateForMapPoint(swMapPoint)
+        let swMapPoint = MKMapPoint.init(x: x, y: y)
+        return swMapPoint.coordinate
     }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offsetY = scrollView.contentOffset.y
