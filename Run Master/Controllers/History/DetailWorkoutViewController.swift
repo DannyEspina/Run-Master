@@ -14,7 +14,7 @@ func delay(seconds: Double, completion: @escaping ()-> Void) {
 }
 class DetailWorkoutViewController: UIViewController, MGLMapViewDelegate, UIScrollViewDelegate {
 
-    var workout: Workouts!
+    //var workout: Workouts!
     var polylineSource: MGLShapeSource?
     var mapView: MGLMapView!
     private var timer: Timer?
@@ -66,15 +66,15 @@ class DetailWorkoutViewController: UIViewController, MGLMapViewDelegate, UIScrol
         self.saveMapViewFrame = mapView.frame
         self.saveMapViewY = mapView.layer.position.y
 
-        let mapViewStore = workout.mapViewStore as! MapViewStore
-        pointsArray = mapViewStore.pointsArray
-        let coordNE = mapViewStore.coordNE
-        let coordSW = mapViewStore.coordSW
-        let coordinateBound = MGLCoordinateBoundsMake(coordSW!, coordNE!)
+        //let mapViewStore = workout.mapViewStore as! MapViewStore
+//        pointsArray = mapViewStore.pointsArray
+//        let coordNE = mapViewStore.coordNE
+//        let coordSW = mapViewStore.coordSW
+        //let coordinateBound = MGLCoordinateBoundsMake(coordSW!, coordNE!)
         
         let edgeInsets = UIEdgeInsets.init(top: 20, left: 20, bottom: 20, right: 20)
         
-        mapView.setVisibleCoordinateBounds(coordinateBound, edgePadding: edgeInsets, animated: true)
+       // mapView.setVisibleCoordinateBounds(coordinateBound, edgePadding: edgeInsets, animated: true)
 
         mapContainer.addSubview(mapView)
         self.mapView.delegate = self

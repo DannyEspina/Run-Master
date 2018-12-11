@@ -20,7 +20,7 @@ class HistoryTableViewController: UITableViewController, MGLMapViewDelegate {
     private let locationManager = LocationManager.shared
     var managedContext: NSManagedObjectContext!
    
-    private var workouts: [Workouts] = []
+    //private var workouts: [Workouts] = []
     private var totalDistance: Double = 0
     private var totalCalories: Double = 0
     private lazy var dateFormatter:DateFormatter = {
@@ -40,19 +40,19 @@ class HistoryTableViewController: UITableViewController, MGLMapViewDelegate {
         super.viewDidAppear(animated)
         self.tabBarController?.tabBar.tintColor = UIColor(rgb: 0xf55116)
 
-        let workoutFetch: NSFetchRequest<Workouts> = Workouts.fetchRequest()
-        workoutFetch.sortDescriptors = [NSSortDescriptor(key: "startDate", ascending: false)]
-        do {
-            let results = try managedContext.fetch(workoutFetch)
-            workouts = results
-            for workout in workouts {
-                totalDistance = totalDistance + workout.distance
-                totalCalories = totalCalories + workout.calories
-            }
-            totalDistance = totalDistance/1609.34
-        } catch let error as NSError {
-            print("Could not fetch. \(error), \(error.userInfo)")
-        }
+        //let workoutFetch: NSFetchRequest<Workouts> = Workouts.fetchRequest()
+       // workoutFetch.sortDescriptors = [NSSortDescriptor(key: "startDate", ascending: false)]
+//        do {
+//            let results = try managedContext.fetch(workoutFetch)
+//            workouts = results
+//            for workout in workouts {
+//                totalDistance = totalDistance + workout.distance
+//                totalCalories = totalCalories + workout.calories
+//            }
+//            totalDistance = totalDistance/1609.34
+//        } catch let error as NSError {
+//            print("Could not fetch. \(error), \(error.userInfo)")
+//        }
         self.tableView.reloadData()
     }
     override func viewWillDisappear(_ animated: Bool) {
@@ -76,7 +76,7 @@ class HistoryTableViewController: UITableViewController, MGLMapViewDelegate {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if(section == 1) {
-            return workouts.count
+            //return workouts.count
         }
         return 1
     }
@@ -95,23 +95,23 @@ class HistoryTableViewController: UITableViewController, MGLMapViewDelegate {
             let cell = self.tableView.dequeueReusableCell(withIdentifier: "HistoryCell", for: indexPath) as! HistoryTableViewCell
             
             // Get the workout corresponding to this row.
-            let workout = workouts[indexPath.row]
+            //let workout = workouts[indexPath.row]
             
             // Get values from workout
-            let calories = workout.calories
-            let distance = Measurement(value: workout.distance, unit: UnitLength.meters)
-            let duration = workout.duration
+//            let calories = workout.calories
+//            let distance = Measurement(value: workout.distance, unit: UnitLength.meters)
+//            let duration = workout.duration
             
             // Set labels for date, distance, and pace
-            if let date = workout.startDate {
-                cell.dateLabel.text = dateFormatter.string(from: date)
-            }
-            if let snapshotData = workout.mapSnapshot {
-                cell.mapSnapshotView.image = UIImage(data: snapshotData)
-            }
-            cell.distanceLabel.text = FormatDisplay.distance(distance)
-            cell.caloriesLabel.text = String(format: "%0.2f cal", calories)
-            cell.durationLabel.text = FormatDisplay.time(Int(duration))
+//            if let date = workout.startDate {
+//                cell.dateLabel.text = dateFormatter.string(from: date)
+//            }
+//            if let snapshotData = workout.mapSnapshot {
+//                cell.mapSnapshotView.image = UIImage(data: snapshotData)
+//            }
+//            cell.distanceLabel.text = FormatDisplay.distance(distance)
+//            cell.caloriesLabel.text = String(format: "%0.2f cal", calories)
+//            cell.durationLabel.text = FormatDisplay.time(Int(duration))
             return cell
         }
         
@@ -120,9 +120,9 @@ class HistoryTableViewController: UITableViewController, MGLMapViewDelegate {
         switch segue.identifier {
         case "detailWorkout"?:
             if let row = tableView.indexPathForSelectedRow?.row {
-                let workout = workouts[row]
-                let detailWorkoutViewController = segue.destination as! DetailWorkoutViewController
-                detailWorkoutViewController.workout = workout
+               // let workout = workouts[row]
+//                let detailWorkoutViewController = segue.destination as! DetailWorkoutViewController
+//                detailWorkoutViewController.workout = workout
             }
         default:
             preconditionFailure("Unexpected segue identifier")

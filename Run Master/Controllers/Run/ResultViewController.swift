@@ -17,7 +17,7 @@ class ResultViewController: UIViewController, UITextViewDelegate, UIImagePickerC
 
     // MARK: - Instance variables
     var workout: RunMasterWorkout!
-    var managedContext: NSManagedObjectContext!
+    //var managedContext: NSManagedObjectContext!
     var coordNE: CLLocationCoordinate2D!
     var coordSW: CLLocationCoordinate2D!
  
@@ -28,7 +28,7 @@ class ResultViewController: UIViewController, UITextViewDelegate, UIImagePickerC
     @IBOutlet var deleteButton: UIButton!
     @IBOutlet var imageHeight: NSLayoutConstraint!
     @IBOutlet var imageWidth: NSLayoutConstraint!
-    //var snapshotImage: UIImage!
+
     // MARK: - Connected Action calls
     // Saves workout to healthkit and places it on History tableViewController
     @IBAction func save(_ sender: UIBarButtonItem) {
@@ -43,29 +43,31 @@ class ResultViewController: UIViewController, UITextViewDelegate, UIImagePickerC
                 print("Didn't save to Apple Health")
             }
         }
-        let workoutStore = Workouts(context: managedContext)
         
-        workoutStore.averagePace = workout.averagePace
-        workoutStore.calories = workout.calories
-        workoutStore.desc = workout.discription
-        workoutStore.distance = workout.distance
-        workoutStore.duration = Int32(workout.duration)
-        workoutStore.elevationGain = workout.elevationGain
-        workoutStore.elevationLoss = workout.elevationLoss
-        workoutStore.startDate = workout.startDate
-        workoutStore.endDate = workout.endDate
-        workoutStore.imageData = workout.imageData
-        workoutStore.mapSnapshot = workout.snapshotData
         
-        let mapViewStore = MapViewStore(coordNE: coordNE, coordSW: coordSW, pointsArray: workout.pointsArray)
-        workoutStore.mapViewStore = mapViewStore
+        //let workoutStore = Workouts(context: managedContext)
         
-        do {
-            
-            try managedContext.save()
-        } catch let error {
-            print("Couldn't save \(error)")
-        }
+//        workoutStore.averagePace = workout.averagePace
+//        workoutStore.calories = workout.calories
+//        workoutStore.desc = workout.discription
+//        workoutStore.distance = workout.distance
+//        workoutStore.duration = Int32(workout.duration)
+//        workoutStore.elevationGain = workout.elevationGain
+//        workoutStore.elevationLoss = workout.elevationLoss
+//        workoutStore.startDate = workout.startDate
+//        workoutStore.endDate = workout.endDate
+//        workoutStore.imageData = workout.imageData
+//        workoutStore.mapSnapshot = workout.snapshotData
+        
+//        let mapViewStore = MapViewStore(coordNE: coordNE, coordSW: coordSW, pointsArray: workout.pointsArray)
+//        workoutStore.mapViewStore = mapViewStore
+//        
+//        do {
+//
+//            try managedContext.save()
+//        } catch let error {
+//            print("Couldn't save \(error)")
+//        }
         
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }

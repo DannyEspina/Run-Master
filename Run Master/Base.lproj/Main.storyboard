@@ -1,35 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nCy-Xc-a19">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nCy-Xc-a19">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Arial.ttf">
-            <string>ArialMT</string>
-        </array>
-        <array key="HelveticaNeue.ttc">
-            <string>HelveticaNeue</string>
-        </array>
-        <array key="HelveticaNeueExtras.ttc">
-            <string>HelveticaNeue-CondensedBlack</string>
-            <string>HelveticaNeue-CondensedBold</string>
-        </array>
-        <array key="HelveticaNeueLights.ttc">
-            <string>HelveticaNeue-Thin</string>
-        </array>
-        <array key="Verdana.ttf">
-            <string>Verdana</string>
-        </array>
-        <array key="VerdanaBold.ttf">
-            <string>Verdana-Bold</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Profile View Controller-->
         <scene sceneID="P6c-Xi-Lv7">
@@ -335,77 +314,6 @@
             </objects>
             <point key="canvasLocation" x="1077.5999999999999" y="2853.8230884557724"/>
         </scene>
-        <!--Route View Controller-->
-        <scene sceneID="fXk-sk-4XP">
-            <objects>
-                <viewController id="uyT-e4-tOo" customClass="RouteViewController" customModule="Run_Master" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="a69-Py-2xH">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="reverseTabBackground" translatesAutoresizingMaskIntoConstraints="NO" id="wjI-Ms-KGa">
-                                <rect key="frame" x="0.0" y="64" width="375" height="3"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="3" id="mgw-X7-eAX"/>
-                                </constraints>
-                            </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bOx-o2-qwM">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
-                                <subviews>
-                                    <navigationBar contentMode="scaleToFill" fixedFrame="YES" translucent="NO" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0zA-bo-Be6">
-                                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <color key="barTintColor" red="0.1058823529" green="0.1176470588" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
-                                        <textAttributes key="titleTextAttributes">
-                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <color key="textShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </textAttributes>
-                                        <textAttributes key="largeTitleTextAttributes">
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                        </textAttributes>
-                                        <items>
-                                            <navigationItem title="Create a Route" id="4UT-zS-9mf"/>
-                                        </items>
-                                    </navigationBar>
-                                </subviews>
-                                <color key="backgroundColor" red="0.1058823529" green="0.1176470588" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="bCP-oD-EEJ"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lgz-6o-ctG">
-                                <rect key="frame" x="0.0" y="67" width="375" height="551"/>
-                                <color key="backgroundColor" red="0.11764705882352941" green="0.12156862745098039" blue="0.14509803921568626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" red="0.1176470588" green="0.1215686275" blue="0.1450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="bOx-o2-qwM" firstAttribute="leading" secondItem="m57-15-WEz" secondAttribute="leading" id="309-GF-CYH"/>
-                            <constraint firstAttribute="trailing" secondItem="wjI-Ms-KGa" secondAttribute="trailing" id="44q-fN-XaW"/>
-                            <constraint firstItem="m57-15-WEz" firstAttribute="bottom" secondItem="lgz-6o-ctG" secondAttribute="bottom" id="6Nu-t3-NEt"/>
-                            <constraint firstItem="lgz-6o-ctG" firstAttribute="leading" secondItem="m57-15-WEz" secondAttribute="leading" id="H4l-YE-IXx"/>
-                            <constraint firstItem="bOx-o2-qwM" firstAttribute="top" secondItem="a69-Py-2xH" secondAttribute="top" id="KL9-Xy-fMb"/>
-                            <constraint firstItem="wjI-Ms-KGa" firstAttribute="top" secondItem="bOx-o2-qwM" secondAttribute="bottom" id="Qna-yv-h3m"/>
-                            <constraint firstItem="lgz-6o-ctG" firstAttribute="top" secondItem="wjI-Ms-KGa" secondAttribute="bottom" id="YRF-uN-zGy"/>
-                            <constraint firstItem="bOx-o2-qwM" firstAttribute="trailing" secondItem="m57-15-WEz" secondAttribute="trailing" id="j4W-GA-LoV"/>
-                            <constraint firstItem="wjI-Ms-KGa" firstAttribute="leading" secondItem="a69-Py-2xH" secondAttribute="leading" id="m0C-Fr-2IN"/>
-                            <constraint firstItem="m57-15-WEz" firstAttribute="trailing" secondItem="lgz-6o-ctG" secondAttribute="trailing" id="wgo-Py-ijv"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="m57-15-WEz"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="" image="map" id="7z0-dI-dI8">
-                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
-                        <color key="badgeColor" red="0.94509803921568625" green="0.33333333333333331" blue="0.082352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </tabBarItem>
-                    <connections>
-                        <outlet property="routeMapContainer" destination="lgz-6o-ctG" id="TF0-vV-Imd"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yBw-z7-fig" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2265" y="1767"/>
-        </scene>
         <!--Title-->
         <scene sceneID="aGx-Je-E27">
             <objects>
@@ -440,7 +348,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="distance " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JCj-Su-27w">
-                                        <rect key="frame" x="220" y="125" width="68" height="19"/>
+                                        <rect key="frame" x="219.5" y="125" width="68" height="19"/>
                                         <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="15"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -455,7 +363,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="pace" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i7u-so-xtS">
-                                        <rect key="frame" x="236" y="51" width="36" height="19"/>
+                                        <rect key="frame" x="235.5" y="51" width="36" height="19"/>
                                         <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="15"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -467,7 +375,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="calories burned" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J1M-oS-PD7">
-                                        <rect key="frame" x="30" y="125" width="116" height="19"/>
+                                        <rect key="frame" x="29.5" y="125" width="116" height="19"/>
                                         <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="15"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -934,7 +842,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="gEv-Va-ni5" kind="relationship" relationship="viewControllers" id="QAN-GE-DUe"/>
-                        <segue destination="uyT-e4-tOo" kind="relationship" relationship="viewControllers" id="VjY-NM-I6K"/>
                         <segue destination="Ffl-jo-oBg" kind="relationship" relationship="viewControllers" id="J7e-gs-Cgv"/>
                         <segue destination="08y-O8-mME" kind="relationship" relationship="viewControllers" id="yHE-V2-BQw"/>
                         <segue destination="SRy-46-ZCa" kind="relationship" relationship="viewControllers" id="ROd-rY-YPt"/>
@@ -952,7 +859,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.08235294118" green="0.086274509799999996" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
-                        <imageView key="tableHeaderView" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tabBackground" id="yxw-TX-GTy">
+                        <imageView key="tableHeaderView" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="tabBackground" id="yxw-TX-GTy">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="3"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <constraints>
@@ -1218,7 +1125,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Calories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mLt-ja-Uag">
-                                            <rect key="frame" x="209" y="74" width="114" height="24"/>
+                                            <rect key="frame" x="209" y="74.5" width="114" height="24"/>
                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
@@ -1258,26 +1165,26 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9eN-co-gzf">
-                                            <rect key="frame" x="195" y="44" width="44" height="24"/>
+                                            <rect key="frame" x="195" y="43.5" width="44" height="24"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="20"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3do-sG-RRa">
-                                            <rect key="frame" x="48" y="44" width="77" height="24"/>
+                                            <rect key="frame" x="48" y="43.5" width="77" height="24"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="20"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="distance" translatesAutoresizingMaskIntoConstraints="NO" id="BbJ-ar-u6r">
-                                            <rect key="frame" x="160" y="45" width="20" height="20"/>
+                                            <rect key="frame" x="160" y="45.5" width="20" height="20"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="20" id="Os1-e9-fUT"/>
                                                 <constraint firstAttribute="height" constant="20" id="vjc-BE-bTO"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dz5-Va-rJG">
-                                            <rect key="frame" x="309" y="44" width="44" height="24"/>
+                                            <rect key="frame" x="309" y="43.5" width="44" height="24"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="20"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
@@ -1290,7 +1197,7 @@
                                             </constraints>
                                         </imageView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fire" translatesAutoresizingMaskIntoConstraints="NO" id="knu-Zw-6tn">
-                                            <rect key="frame" x="274" y="46" width="20" height="20"/>
+                                            <rect key="frame" x="274" y="45.5" width="20" height="20"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="20" id="B3I-wG-PWC"/>
                                                 <constraint firstAttribute="width" constant="20" id="HS6-B9-0l3"/>
@@ -1303,7 +1210,7 @@
                                             </constraints>
                                         </imageView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5Hy-qk-m3A">
-                                            <rect key="frame" x="0.0" y="84" width="375" height="192"/>
+                                            <rect key="frame" x="0.0" y="83.5" width="375" height="192.5"/>
                                         </imageView>
                                     </subviews>
                                     <constraints>
@@ -1414,7 +1321,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Animation showing bars of elevation gain and lost" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O94-in-1Re">
-                                <rect key="frame" x="47" y="228" width="282" height="12.5"/>
+                                <rect key="frame" x="46.5" y="227.5" width="282" height="12.5"/>
                                 <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="10"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1454,13 +1361,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gN4-Es-bmD">
-                                <rect key="frame" x="124" y="20" width="128" height="32"/>
+                                <rect key="frame" x="123.5" y="20" width="128" height="32"/>
                                 <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="26"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calories Burned" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ozb-iW-5lJ">
-                                <rect key="frame" x="72" y="164" width="232" height="32"/>
+                                <rect key="frame" x="71.5" y="164" width="232" height="32"/>
                                 <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="26"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1486,7 +1393,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TbP-e1-q9k">
-                                <rect key="frame" x="145" y="204" width="84" height="32"/>
+                                <rect key="frame" x="145.5" y="204" width="84" height="32"/>
                                 <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="26"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1526,7 +1433,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="000.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IMX-RV-6QR">
-                                <rect key="frame" x="145" y="348" width="84" height="32"/>
+                                <rect key="frame" x="145.5" y="348" width="84" height="32"/>
                                 <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="26"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1538,7 +1445,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Average Pace" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBP-5K-luw">
-                                <rect key="frame" x="89" y="438" width="198" height="32"/>
+                                <rect key="frame" x="88.5" y="438" width="198" height="32"/>
                                 <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="26"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1712,11 +1619,11 @@
     </scenes>
     <resources>
         <image name="Fire" width="50" height="50"/>
-        <image name="History" width="48" height="32"/>
-        <image name="Profile" width="48" height="32"/>
+        <image name="History" width="97" height="65"/>
+        <image name="Profile" width="97" height="65"/>
         <image name="Routes" width="500" height="500"/>
-        <image name="Setting" width="48" height="32"/>
-        <image name="Timer" width="48" height="32"/>
+        <image name="Setting" width="97" height="65"/>
+        <image name="Timer" width="97" height="65"/>
         <image name="burn-bronze" width="100" height="100"/>
         <image name="burn-sliver" width="100" height="100"/>
         <image name="chooseRun" width="500" height="500"/>
@@ -1727,13 +1634,12 @@
         <image name="duration" width="50" height="33"/>
         <image name="expandMap" width="100" height="100"/>
         <image name="locationOff" width="100" height="100"/>
-        <image name="map" width="48" height="32"/>
         <image name="pace-bronze" width="100" height="100"/>
         <image name="pace-silver" width="100" height="100"/>
         <image name="reverseTabBackground" width="490" height="330"/>
-        <image name="tabBackground" width="245" height="165"/>
+        <image name="tabBackground" width="490" height="330"/>
         <image name="timer-bronze" width="100" height="100"/>
         <image name="timer-silver" width="100" height="100"/>
-        <image name="trash" width="50" height="50"/>
+        <image name="trash" width="100" height="100"/>
     </resources>
 </document>
