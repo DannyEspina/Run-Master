@@ -9,16 +9,21 @@
 import UIKit
 import CoreLocation
 import CoreData
+import firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-    
-    lazy var coreDataStack = CoreDataStack(modelName: "RunMaster")
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        // [START default_firestore]
+        FirebaseApp.configure()
+        
+        let db = Firestore.firestore()
+        // [END default_firestore]
+        print(db) // silence warning
+        
         // Override point for customization after application launch.
         let tabBarController = window!.rootViewController as! UITabBarController
         let mapViewController = tabBarController.viewControllers![2] as! MapViewController
