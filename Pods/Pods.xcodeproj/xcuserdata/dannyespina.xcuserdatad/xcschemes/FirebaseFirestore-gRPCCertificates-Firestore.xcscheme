@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1010"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "43F08C37EDF01F2D8C5487C527FE940D"
+               BlueprintIdentifier = "0ECA9091F267E49C051F1F2D450B1BED"
                BuildableName = "gRPCCertificates-Firestore.bundle"
                BlueprintName = "FirebaseFirestore-gRPCCertificates-Firestore"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "43F08C37EDF01F2D8C5487C527FE940D"
+            BlueprintIdentifier = "0ECA9091F267E49C051F1F2D450B1BED"
             BuildableName = "gRPCCertificates-Firestore.bundle"
             BlueprintName = "FirebaseFirestore-gRPCCertificates-Firestore"
             ReferencedContainer = "container:Pods.xcodeproj">
