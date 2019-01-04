@@ -7,16 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3FB7BD4C4E904A502BD54B84 /* Pods_Run_Master.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2A7476C0FCFCF480343E0D4 /* Pods_Run_Master.framework */; };
 		6D0D479F1FBBB34000A4805E /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0D479E1FBBB34000A4805E /* StatsViewController.swift */; };
 		6D0E452C1FBB8DE700E65FD3 /* ResultPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0E452B1FBB8DE700E65FD3 /* ResultPageViewController.swift */; };
 		6D2CD2331FB0A7D8009144D9 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2CD2321FB0A7D8009144D9 /* HistoryTableViewCell.swift */; };
 		6D34336021C00F57004A00A3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6D34335F21C00F57004A00A3 /* GoogleService-Info.plist */; };
+		6D34338721DD2D3B004A00A3 /* Myriad Pro Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6D34338621DD2D3B004A00A3 /* Myriad Pro Regular.ttf */; };
+		6D34338A21DD5F59004A00A3 /* Pods_Run_Master.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D34338921DD5F59004A00A3 /* Pods_Run_Master.framework */; };
+		6D34338D21DE93C9004A00A3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D34338C21DE93C9004A00A3 /* LoginViewController.swift */; };
 		6D3513B81FC74E7000A41595 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3513B71FC74E7000A41595 /* LocationManager.swift */; };
 		6D3513BA1FC7676800A41595 /* FormatDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3513B91FC7676800A41595 /* FormatDisplay.swift */; };
 		6D3513BC1FC77F3900A41595 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3513BB1FC77F3900A41595 /* Extensions.swift */; };
 		6D3513BE1FC7BA5200A41595 /* TotalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3513BD1FC7BA5200A41595 /* TotalTableViewCell.swift */; };
-		6D3513C31FCA1EF900A41595 /* MapboxStatic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D3513C41FCA1EF900A41595 /* MapboxStatic.framework */; };
 		6D65E8EA1FC5B27F00B1B5E1 /* RunMasterWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D65E8E91FC5B27F00B1B5E1 /* RunMasterWorkout.swift */; };
 		6D707D6C1FAA3972007AD496 /* MapViewStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D707D6B1FAA3972007AD496 /* MapViewStore.swift */; };
 		6D7A47951F9EF88D00E87574 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7A47941F9EF88D00E87574 /* AppDelegate.swift */; };
@@ -59,17 +60,18 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		145807F2D703C0CA37C7F7DB /* Pods_Run_MasterTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Run_MasterTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		408C3EDB223ECECDB746B601 /* Pods-Run Master.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Run Master.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Run Master/Pods-Run Master.debug.xcconfig"; sourceTree = "<group>"; };
 		6D0D479E1FBBB34000A4805E /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 		6D0E452B1FBB8DE700E65FD3 /* ResultPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultPageViewController.swift; sourceTree = "<group>"; };
 		6D2CD2321FB0A7D8009144D9 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		6D34335F21C00F57004A00A3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6D34338621DD2D3B004A00A3 /* Myriad Pro Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Myriad Pro Regular.ttf"; sourceTree = "<group>"; };
+		6D34338921DD5F59004A00A3 /* Pods_Run_Master.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Run_Master.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D34338C21DE93C9004A00A3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		6D3513B71FC74E7000A41595 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		6D3513B91FC7676800A41595 /* FormatDisplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormatDisplay.swift; sourceTree = "<group>"; };
 		6D3513BB1FC77F3900A41595 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		6D3513BD1FC7BA5200A41595 /* TotalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalTableViewCell.swift; sourceTree = "<group>"; };
-		6D3513C41FCA1EF900A41595 /* MapboxStatic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MapboxStatic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D65E8E91FC5B27F00B1B5E1 /* RunMasterWorkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunMasterWorkout.swift; sourceTree = "<group>"; };
 		6D707D6B1FAA3972007AD496 /* MapViewStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewStore.swift; sourceTree = "<group>"; };
 		6D7A47911F9EF88D00E87574 /* Run Master.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Run Master.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,8 +103,6 @@
 		6DF95B3F1FD4B94C005F4AB7 /* PaceChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaceChartViewController.swift; sourceTree = "<group>"; };
 		B8149B5FD2C87E6E90E06E7D /* Pods-Run MasterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Run MasterTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Run MasterTests/Pods-Run MasterTests.release.xcconfig"; sourceTree = "<group>"; };
 		BE733B686912C57303F1AEB3 /* Pods-Run Master.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Run Master.release.xcconfig"; path = "Pods/Target Support Files/Pods-Run Master/Pods-Run Master.release.xcconfig"; sourceTree = "<group>"; };
-		D2A7476C0FCFCF480343E0D4 /* Pods_Run_Master.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Run_Master.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D2FCF9D61F04552BD6096E6B /* Pods_Run_MasterUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Run_MasterUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9BA4F797CC495F6371C7F1D /* Pods-Run MasterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Run MasterTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Run MasterTests/Pods-Run MasterTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E34CB11D7EC5BA3B78C5ECDC /* Pods-Run MasterUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Run MasterUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Run MasterUITests/Pods-Run MasterUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		FCE95DFF6283ECCEB2A3E78E /* Pods-Run MasterUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Run MasterUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Run MasterUITests/Pods-Run MasterUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -113,9 +113,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D3513C31FCA1EF900A41595 /* MapboxStatic.framework in Frameworks */,
+				6D34338A21DD5F59004A00A3 /* Pods_Run_Master.framework in Frameworks */,
 				6DE289581FA6758A004583BE /* HealthKit.framework in Frameworks */,
-				3FB7BD4C4E904A502BD54B84 /* Pods_Run_Master.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,6 +174,7 @@
 		6D34336621C01B01004A00A3 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				6D34338521DD2CF4004A00A3 /* Fonts */,
 				6DE19D791FA677FB0018D3CD /* HealthKitSetupAssistant.swift */,
 				6DED26FE1FA14FEB00CE6FF9 /* InspectableView.swift */,
 				6DD71E651FBDEF8300613D01 /* ImageInpectableView.swift */,
@@ -184,6 +184,22 @@
 				6DB4F4601FA8CBD000262380 /* HealthKit Extensions */,
 			);
 			path = Support;
+			sourceTree = "<group>";
+		};
+		6D34338521DD2CF4004A00A3 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				6D34338621DD2D3B004A00A3 /* Myriad Pro Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		6D34338B21DE939A004A00A3 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				6D34338C21DE93C9004A00A3 /* LoginViewController.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 		6D7A47881F9EF88D00E87574 = {
@@ -212,6 +228,7 @@
 				6DB4F4631FA9578600262380 /* Models */,
 				6DB4F45D1FA8CB5000262380 /* Controllers */,
 				6D34336621C01B01004A00A3 /* Support */,
+				6D34338B21DE939A004A00A3 /* Onboarding */,
 				6D7A479B1F9EF88D00E87574 /* Assets.xcassets */,
 				6D7A47981F9EF88D00E87574 /* Main.storyboard */,
 				6D7A479D1F9EF88D00E87574 /* LaunchScreen.storyboard */,
@@ -224,11 +241,8 @@
 		6D7A47C61F9FC48600E87574 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6D3513C41FCA1EF900A41595 /* MapboxStatic.framework */,
+				6D34338921DD5F59004A00A3 /* Pods_Run_Master.framework */,
 				6DE289571FA6758A004583BE /* HealthKit.framework */,
-				D2A7476C0FCFCF480343E0D4 /* Pods_Run_Master.framework */,
-				145807F2D703C0CA37C7F7DB /* Pods_Run_MasterTests.framework */,
-				D2FCF9D61F04552BD6096E6B /* Pods_Run_MasterUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -292,8 +306,8 @@
 				6D7A478F1F9EF88D00E87574 /* Resources */,
 				4B9070C752C47BF8630889CB /* [CP] Embed Pods Frameworks */,
 				6D8876B41FD07CDF00BCCFE1 /* Embed Frameworks */,
-				6D8876B81FD20E6B00BCCFE1 /* ShellScript */,
 				09D63870C74DD4B068EA3DB1 /* [CP] Copy Pods Resources */,
+				6D34338821DD5E2D004A00A3 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -323,6 +337,9 @@
 								enabled = 1;
 							};
 							com.apple.HealthKit = {
+								enabled = 1;
+							};
+							com.apple.Keychain = {
 								enabled = 1;
 							};
 							com.apple.Maps.iOS = {
@@ -357,6 +374,7 @@
 			files = (
 				6D7A479F1F9EF88D00E87574 /* LaunchScreen.storyboard in Resources */,
 				6D7A479C1F9EF88D00E87574 /* Assets.xcassets in Resources */,
+				6D34338721DD2D3B004A00A3 /* Myriad Pro Regular.ttf in Resources */,
 				6D7A479A1F9EF88D00E87574 /* Main.storyboard in Resources */,
 				6D34336021C00F57004A00A3 /* GoogleService-Info.plist in Resources */,
 			);
@@ -404,11 +422,14 @@
 				"${PODS_ROOT}/Target Support Files/Pods-Run Master/Pods-Run Master-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
+				"${BUILT_PRODUCTS_DIR}/EasySocialButton/EasySocialButton.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/JVFloatLabeledTextField/JVFloatLabeledTextField.framework",
+				"${BUILT_PRODUCTS_DIR}/LGButton/LGButton.framework",
 				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework",
 				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework.dSYM",
 				"${BUILT_PRODUCTS_DIR}/MapboxStatic.swift/MapboxStatic.framework",
@@ -423,11 +444,14 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EasySocialButton.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JVFloatLabeledTextField.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LGButton.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mapbox.framework",
 				"${DWARF_DSYM_FOLDER_PATH}/Mapbox.framework.dSYM",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MapboxStatic.framework",
@@ -443,18 +467,22 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Run Master/Pods-Run Master-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6D8876B81FD20E6B00BCCFE1 /* ShellScript */ = {
+		6D34338821DD5E2D004A00A3 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputFileListPaths = (
+			);
 			inputPaths = (
+			);
+			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mapbox.framework/strip-frameworks.sh\"";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n";
 		};
 		7B688A346D066460A504C21E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -499,6 +527,7 @@
 				6DB4F45C1FA8CAF700262380 /* UserHealthProfile.swift in Sources */,
 				6DE19D7A1FA677FB0018D3CD /* HealthKitSetupAssistant.swift in Sources */,
 				6D0D479F1FBBB34000A4805E /* StatsViewController.swift in Sources */,
+				6D34338D21DE93C9004A00A3 /* LoginViewController.swift in Sources */,
 				6DB4F4551FA69C8800262380 /* HKBiologicalSex+StringRepresentation.swift in Sources */,
 				6DB4F4561FA69C8800262380 /* HKBloodType+StringRepresentation.swift in Sources */,
 				6DED27091FA2EF6300CE6FF9 /* ProfileViewController.swift in Sources */,

@@ -7,6 +7,9 @@ target 'Run Master' do
 
   pod 'Mapbox-iOS-SDK'
   pod 'MapboxStatic.swift', '~> 0.9'
+  pod 'JVFloatLabeledTextField'
+  pod 'EasySocialButton'
+  pod 'LGButton'
   pod 'Firebase/Core'
   pod 'Firebase/Firestore'
   pod 'Firebase/Auth'

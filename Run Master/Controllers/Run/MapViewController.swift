@@ -381,7 +381,7 @@ class MapViewController: UIViewController{
             workout.pointsArray = pointsArray
         
             resultViewController.workout = workout
-            resultViewController.managedContext = managedContext
+            //resultViewController.managedContext = managedContext
 
         default:
             preconditionFailure("Unexpected segue identifer.")
